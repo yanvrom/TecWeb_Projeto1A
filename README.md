@@ -1,4 +1,3 @@
 # TecWeb_Projeto1A
 
-Alunos: Raul Rangel
-        Yan Romano
+Aluno:   Yan Vieira Romano
