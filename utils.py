@@ -16,6 +16,10 @@ def load_data():
     notas = db.get_all()
     return notas
 
+def load_nota(id):
+    nota = db.get_nota(id)
+    return nota
+
 def load_template(nome_arquivo_template):
     template = open("templates/"+nome_arquivo_template, "r", encoding = "utf-8").read()
     return template

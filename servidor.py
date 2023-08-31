@@ -1,7 +1,10 @@
 import socket
 from pathlib import Path
 from utils import extract_route, read_file, build_response
-from views import index
+from views import index, edit
+from database import Database
+
+db = Database('notes')
 
 
 CUR_DIR = Path(__file__).parent
@@ -23,12 +26,20 @@ while True:
     print(request)
 
     route = extract_route(request)
+    print(f"A rota é {route}")
 
     filepath = CUR_DIR / route
     if filepath.is_file():
         response = build_response() + read_file(filepath)
     elif route == '':
         response = index(request)
+    elif route.startswith("delete"):
+        id = route.split("/")[1]
+        db.delete(id)
+        response = build_response(code=303, reason='See Other', headers='Location: /')
+    elif route.startswith("edit") and route.split("/")[1].isnumeric():
+        id = route.split("/")[1]
+        response = edit(request, id)
     else:
         response = build_response()
         

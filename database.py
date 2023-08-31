@@ -33,6 +33,15 @@ class Database:
         # self.conn.commit()
         notes = [Note(id = linha[0], title = linha[1], content=linha[2]) for linha in cursor]
         return notes
+    
+    def get_nota(self, id):
+        comando = f"""
+            SELECT id, title, content FROM note WHERE id = {id}
+        """
+        cursor = self.conn.execute(comando)
+        # self.conn.commit()
+        note = [Note(id = linha[0], title = linha[1], content=linha[2]) for linha in cursor]
+        return note[0]
 
     def update(self, entry):
         comando = f"""

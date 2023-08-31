@@ -63,6 +63,7 @@ body {
   font-size: 1.7em;
   border: none;
   padding-bottom: 15px;
+  resize: none;
 }
 
 .card-superior{
@@ -93,7 +94,7 @@ body {
   color: black;
   font-size: 1.1em;
   font-weight: bold;
-  padding: 10px 10px 0px 10px;
+  padding: 5px 5px 0px 5px;
   align-self: flex-start;
 }
 
@@ -190,10 +191,22 @@ body {
   align-items: start;
 }
 
-.image-button {
+.image-button-edit {
   background: none;
   border: none;
   padding: 0;
+}
+
+.image-button-delete {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* Você pode usar o CSS comentado abaixo, se ajudar */
@@ -217,6 +230,53 @@ body {
 
 .btn > * {
   position: relative;
+}
+.btn-cancelar{
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+
+  background-color: #cfcbcb;
+
+  transition: background-color 0.3s;
+}
+.btn-atualizar{
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  padding: 10px 10px 10px 10px;
+  margin: 5px;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px ;
+
+  background-color: #f7d736;
+
+  transition: background-color 0.3s;
 }
 
 .btn:before {

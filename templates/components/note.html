@@ -2,11 +2,15 @@
     <div class="card-superior">
         <h3 class="card-title">{title}</h3>
         <div class = "icones">
-            <button class="image-button">
-                <img src="img/editar.png" class="icone-img">
+            <button class="image-button-edit">
+                <a href="/edit/{id}">
+                    <img src="img/editar.png" class="icone-img">
+                </a>
             </button>
-            <button class="image-button">
-                <img src="img/lixeira.png" class="icone-img">
+            <button class="image-button-delete">
+                <a href="/delete/{id}">
+                    <img src="img/lixeira.png" class="icone-img">
+                </a>
             </button>
         </div>
     </div>
