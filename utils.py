@@ -17,7 +17,7 @@ def load_data():
     return notas
 
 def load_template(nome_arquivo_template):
-    template = open("templates/"+nome_arquivo_template, "r").read()
+    template = open("templates/"+nome_arquivo_template, "r", encoding = "utf-8").read()
     return template
 
 def add_anotacao(titulo, detalhes):
