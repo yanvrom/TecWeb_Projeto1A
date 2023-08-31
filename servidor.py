@@ -1,6 +1,6 @@
 import socket
 from pathlib import Path
-from utils import extract_route, read_file, build_response
+from utils import extract_route, read_file, build_response, load_template
 from views import index, edit
 from database import Database
 
@@ -41,7 +41,7 @@ while True:
         id = route.split("/")[1]
         response = edit(request, id)
     else:
-        response = build_response()
+        response = build_response(code=404, body= load_template("404.html"))
         
     client_connection.sendall(response)
 

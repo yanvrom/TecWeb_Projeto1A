@@ -209,6 +209,13 @@ body {
   justify-content: center;
 }
 
+.img-erro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+}
+
 /* Você pode usar o CSS comentado abaixo, se ajudar */
 /* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
 .btn {
