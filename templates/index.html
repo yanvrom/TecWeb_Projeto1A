@@ -18,9 +18,17 @@
     </head>
 <body>
     <div class="appbar">
-        <img src="img/logo-getit.png" class="logo" />
-        <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+        <div class="inicio-appbar">
+            <img src="img/logo-getit.png" class="logo" />
+            <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+        </div>
+        <div class = "menu-dark">
+            <p>Modo: </p>
+            <button id="toggle" class="botao-dark-mode"></button>
+            <button id="refresh">refresh</button>
+        </div>
     </div>
+    
     <main class="container">
         <!-- method="post" foi removido apenas para o exemplo funcionar sem o servidor -->
         <form class="form-card" method="post">

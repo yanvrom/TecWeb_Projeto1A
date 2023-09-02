@@ -22,19 +22,83 @@ Algumas informações úteis e dicas:
   - Sombra: https://codepen.io/sdthornton/pen/wBZdXq
  */
 
-html,
+
+html{
+  background-color: var(--fundo);
+}
 body {
   font-family: "Roboto", sans-serif;
+
+  --cor-principal: #f7d736;
+  --texto-geral: #000000;
+  --texto-cards: #4c4c4c;
+  --card1: #ead3a7;
+  --card2: #9de0f5;
+  --card3:#ef89ba;
+  --card4:#fae890;
+  --card5: #abe9c1;
+  --botao-claro: #cfcbcb;
+  --fundo: #ffffff;
+  --cor-sombra: rgba(0,0,0,0.19);
+  background-color: var(--fundo);
+  background-size: cover;
+  --img--darkmode: url("../img/sol.png");
 }
 
+.dark{
+  --cor-principal: #89771e;
+  --texto-geral: #edeeeb;
+  --texto-cards: #dededcd6;
+  --card1: #cea42693;
+  --card2: #4cb0cc9a;
+  --card3:#ae3d74cd;
+  --card4:#d5c04a84;
+  --card5: #419a6296;
+  --botao-claro: #cfcbcb50;
+  --fundo: #2e2e2a;
+  --cor-sombra: rgba(7, 7, 7, 0.811);
+  --img--darkmode: url("../img/lua.png");
+}
+
+#refresh {
+  display: none;
+}
+
+.botao-dark-mode{
+  background-image: var(--img--darkmode);
+  background-size: cover; /* Redimensionar a imagem para cobrir todo o botão */
+  background-repeat: no-repeat; /* Evitar a repetição da imagem */
+  background-position: center; /* Centralizar a imagem no botão */
+  background-color: transparent;
+  width: 40px; /* Largura do botão */
+  height: 40px; /* Altura do botão */
+  border: none; /* Remover a borda do botão */
+  text-align: center; /* Alinhamento do texto no centro do botão */
+  cursor: pointer;
+}
+
+.menu-dark{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--texto-geral);
+  justify-content: flex-end;
+}
+
+.inicio-appbar{
+  display: flex;
+  height: fit-content;
+  align-items: center;
+}
 .appbar{
   display: flex;
   height: fit-content;
-  background-color: #f7d736;
+  background-color: var(--cor-principal);
   align-items: center;
   padding: 0.2em;
   margin-bottom: 2em;
-  box-shadow: 1px 2px 15px #4c4c4c;
+  box-shadow: 1px 2px 15px var(--cor-sombra);
+  justify-content: space-between;
 }
 
 .logo{
@@ -51,15 +115,18 @@ body {
 .form-card{
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
+  box-shadow: 0 10px 20px var(--cor-sombra), 0 6px 6px var(--cor-sombra); 
   border: #4c4c4c;
   padding: 1%;
   width: 40%;
   margin-bottom: 2em;
   align-content: space-between;
+  background: var(--fundo);
 }
 
 .form-card-title{
+  color: var(--texto-geral);
+  background: var(--fundo);
   font-size: 1.7em;
   border: none;
   padding-bottom: 15px;
@@ -77,6 +144,8 @@ body {
   border: none;
   resize: none;
   padding: 5px 5px 10px 5px;
+  color: var(--texto-geral);
+  background: var(--fundo);
 }
 
 .card{
@@ -87,11 +156,11 @@ body {
   width: 14rem;
   height: 10rem;
   margin: 0.3rem 0.3rem 1rem 0.3rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
+  box-shadow: 0 10px 20px var(--cor-sombra), 0 6px 6px var(--cor-sombra); 
 }
 
 .card-title{
-  color: black;
+  color: var(--texto-geral);
   font-size: 1.1em;
   font-weight: bold;
   padding: 5px 5px 0px 5px;
@@ -99,7 +168,7 @@ body {
 }
 
 .card-content{
-  color: #4c4c4c;
+  color: var(--texto-cards);
   font-size: 1em;
   padding: 10px 10px;
   align-self: center;
@@ -119,23 +188,23 @@ body {
 }
 
 .card-color-1{
-  background: #ead3a7;
+  background: var(--card1);
 }
 
 .card-color-2{
-  background: #9de0f5;
+  background: var(--card2);
 }
 
 .card-color-3{
-  background: #ef89ba;
+  background: var(--card3);
 }
 
 .card-color-4{
-  background: #fae890;
+  background: var(--card4);
 }
 
 .card-color-5{
-  background: #abe9c1;
+  background: var(--card5);
 }
 
 .card-rotation-1{
@@ -184,6 +253,7 @@ body {
   border: none;
 }
 
+
 .icones{
   padding: 10px 10px 0px 10px;
   display: flex;
@@ -228,17 +298,24 @@ body {
   border-width: 0;
   outline: none;
   border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 4px var(--cor-sombra);
 
-  background-color: #f7d736;
+  background-color: var(--cor-principal);
 
   transition: background-color 0.3s;
+  color: var(--texto-geral);
 }
 
+
+.subtitle{
+  color: var(--texto-geral)
+}
 .btn > * {
   position: relative;
+  color: var(--texto-geral);
 }
 .btn-cancelar{
+  color: var(--texto-geral);
   position: relative;
   display: flex;
   flex-grow: 1;
@@ -247,7 +324,6 @@ body {
   padding: 10px 10px 10px 10px;
   margin: 5px;
   text-decoration: none;
-  color: black;
   font-weight: bold;
 
   overflow: hidden;
@@ -255,9 +331,9 @@ body {
   border-width: 0;
   outline: none;
   border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 4px var(--cor-sombra);
 
-  background-color: #cfcbcb;
+  background-color: var(--botao-claro);
 
   transition: background-color 0.3s;
 }
@@ -270,7 +346,7 @@ body {
   text-decoration: none;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: var(--texto-geral);
   font-weight: bold;
 
 
@@ -279,9 +355,9 @@ body {
   border-width: 0;
   outline: none;
   border-radius: 2px;
-  box-shadow: 0 1px 4px ;
+  box-shadow: 0 1px 4px var(--cor-sombra);
 
-  background-color: #f7d736;
+  background-color: var(--cor-principal);
 
   transition: background-color 0.3s;
 }
@@ -292,6 +368,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  font-weight: bold;
 
   display: block;
   width: 0;
